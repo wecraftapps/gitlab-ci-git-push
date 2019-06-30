@@ -7,7 +7,7 @@ This GitLab CI runner image allows to deploy a GitLab project to a remote Git re
 Create `.gitlab-ci.yml`:
 
 ```yaml
-image: ilyasemenov/gitlab-ci-git-push
+image: wecraftapps/gitlab-ci-git-push
 
 stages:
   - deploy
@@ -17,7 +17,7 @@ deploy to production:
   environment: production
   only:
     - master
-  script: git-push dokku@dokku.me:myapp
+  script: git-push dokku@dokku.me:myapp branch:master
 ```
 
 Go to GitLab > Project > Settings > CI/CD > Secret Variables, and add a variable `SSH_PRIVATE_KEY`:
